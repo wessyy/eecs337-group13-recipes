@@ -67,9 +67,12 @@ def get_ingredient_info(unparsed_ingredients, ingredients_all, measurements_all)
         ingredient = get_keyword(unparsed_ingredient, ingredients_all)
 
         # if there is a more precise measurement in parenthesis, use that
-        if '(' in quantity and ')' in quantity:
-            measurement = get_keyword(quantity[1:-1], measurements_all)
-            quantity = get_quantity(quantity[1:-1])
+        if quantity is not None:
+            if '(' in quantity and ')' in quantity:
+                measurement = get_keyword(quantity[1:-1], measurements_all)
+                quantity = get_quantity(quantity[1:-1])
+        else:
+            quantity = 1
 
         # if the ingredient is not in the text file, use the whole unparsed string
         if ingredient is None:

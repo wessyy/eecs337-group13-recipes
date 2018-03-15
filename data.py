@@ -54,6 +54,8 @@ def get_info(filename):
     lines = text_file.read().split('\n')
     if '' in lines:
         lines.remove('')
+    for i in range(0, len(lines)):
+        lines[i] = lines[i].lower()
     return lines
 
 

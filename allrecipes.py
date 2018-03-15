@@ -33,9 +33,9 @@ if __name__ == '__main__':
         if args.transform:
             print('\n')
             print('These are the possible transformations:')
-            print('- vegetarian')
             print('- healthy')
-            print('- italian')
+            print('- vegetarian')
+            print('- vegan')
             print('- chinese')
             print('\n')
             transformation = input(
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             quit = False
             while(quit == False):
                 quit = True
-                if transformation in ['vegetarian', 'healthy', 'italian', 'chinese']:
+                if transformation in ['healthy', 'vegetarian', 'vegan', 'chinese']:
 
                     if args.list:
                         transform.transform(

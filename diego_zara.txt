@@ -1,0 +1,1 @@
+Web scraper, gets the info from the URL. Built functions to parse instructions into a standardized format. Built cuisine transformations.

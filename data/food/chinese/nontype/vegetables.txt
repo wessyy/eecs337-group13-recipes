@@ -5,3 +5,4 @@ potatoes
 potato
 mushroom
 cheese
+cheddar

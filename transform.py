@@ -68,7 +68,6 @@ def get_new_ingredient_list(ingredient_list):
 def get_new_steps(allrecipes_steps, ingredient_list):
     # print(ingredient_list)
     for ingredient in ingredient_list['ingredients']:
-        # print(ingredient)
         if ':' in ingredient:
             old_ingredient = ingredient.split(':')[0]
             # print(old_ingredient)
@@ -76,7 +75,14 @@ def get_new_steps(allrecipes_steps, ingredient_list):
             # print(new_ingredient)
             allrecipes_steps = [step.replace(old_ingredient, new_ingredient)
                                 for step in allrecipes_steps]
-
+            # check that the name of the ingredient has a reduction, we asume that the main ingredient
+            # is at the beginning or at the end.
+            if len(old_ingredient.split()) > 1:
+                allrecipes_steps = [step.replace(old_ingredient.split()[1], new_ingredient)
+                                    for step in allrecipes_steps]
+                allrecipes_steps = [step.replace(old_ingredient.split()[-1], new_ingredient)
+                                    for step in allrecipes_steps]
+            
     return allrecipes_steps
 
 

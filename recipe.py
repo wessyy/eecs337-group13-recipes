@@ -45,7 +45,6 @@ def list_recipe(url, total_ingredients_used=None):
         print(method)
     print('\n')
 
-
 def get_keyword(unparsed_text, keyword_list):
     for keyword in keyword_list:
         key_regex = keyword + '(s|(es))?'
@@ -53,7 +52,6 @@ def get_keyword(unparsed_text, keyword_list):
         if key is not None:
             return key.group()
     return None
-
 
 def get_ingredient_info(unparsed_ingredients, ingredients_all, measurements_all):
     quantities_used = []
@@ -83,6 +81,9 @@ def get_ingredient_info(unparsed_ingredients, ingredients_all, measurements_all)
                 quantity = ''
             ingredient = ingredient.replace(quantity, '')
             ingredient = ingredient.replace(measurement, '')
+
+        # Clean ingredient
+        ingredient = ingredient.strip()
 
         # if there is no measurement unit, use the ingredient as the unit
         # if measurement == None:

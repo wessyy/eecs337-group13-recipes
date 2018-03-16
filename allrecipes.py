@@ -37,6 +37,7 @@ if __name__ == '__main__':
             print('- vegetarian')
             print('- vegan')
             print('- chinese')
+            print('- italian')
             print('\n')
             transformation = input(
                 'What type of transformation would you like to perform? \n').lower()
@@ -48,8 +49,7 @@ if __name__ == '__main__':
             quit = False
             while(quit == False):
                 quit = True
-                if transformation in ['healthy', 'vegetarian', 'vegan', 'chinese']:
-
+                if transformation in ['healthy', 'vegetarian', 'vegan', 'chinese', 'italian']:
                     if args.list:
                         transform.transform(
                             args.url, transformation, direction, list_tag=True)

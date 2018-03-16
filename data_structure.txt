@@ -1,0 +1,19 @@
+Data.py
+- Takes in all word banks
+- Takes in the unedited ingredients list
+- Takes in the unedited directions list
+
+Recipe.py
+- Creates a list of all ingredients used, splitting on ingredient, quantity, and measurement.
+- Uses a generalized function to search for primary cooking methods, secondary cooking methods, and equipment.
+
+Instructions.py
+- Splits instructions into independent clauses (via '.' or ', and')
+- Puts parsed instructions into a database separating the different parts of the instruction as well as time.
+
+Transform.py
+- Takes in all data from Recipe.py or Instructions.py
+- Searches for ingredients that need to be transformed
+- Replaces ingredient with the proper alternative
+
+* Note: Classes were not used, data that was passed was all in string format, and was organized into different lists or pandas dataframes.
